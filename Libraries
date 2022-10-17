@@ -1,0 +1,21 @@
+import pandas as pd
+import os
+import PIL
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+import matplotlib.pyplot as plt
+from bokeh.plotting import figure, show, output_file
+from plotly.graph_objs import *
+import plotly.graph_objs as go
+import numpy as np
+import plotly
+import seaborn as sns
+from plotly import tools
+import plotly.plotly as py
+from skimage import io
+from PIL import Image
+from skimage.filters import threshold_otsu, try_all_threshold
+import matplotlib.pyplot as plt
+from skimage.transform import rescale, resize, downscale_local_mean
+import pickle
+import time
+from sklearn.model_selection import train_test_split
