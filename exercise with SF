@@ -1,0 +1,31 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import folium
+
+
+dataset_path="C:\\Users\\rarbr\\PycharmProjects\\pythonProject\\Map-Crime_Incidents-Previous_Three_Months.csv"
+SF=pd.read_csv(dataset_path)
+
+print("***********Vizualizing 5 rows***********")
+print(SF.head())
+
+print("*****COLUMN****")
+print(SF.columns)
+print("Nb of columns")
+print(SF.shape[1])
+print(len(SF))
+
+SF['Month']=SF['Date'].apply(lambda row: int(row[0:2]))
+SF['Day']=SF['Date'].apply(lambda row: int(row[3:5]))
+
+print("************First five rows of Month")
+print(SF['Month'][0:5])
+print("************First two rows of day")
+print(SF['Day'][0:2])
+
+del SF['IncidntNum']
+SF.drop('Location', axis=1, inplace=True)
+
+print("*********Checking that Location and IncidntNum have been removed*********")
+print(SF.columns)
