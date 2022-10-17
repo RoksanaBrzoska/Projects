@@ -1,0 +1,30 @@
+import math
+
+class mathFunctions:
+
+    def calculatePi(self):
+        print("The number of pi is", math.pi)
+
+    def calculateSqrt(self):
+        print("Please enter number")
+        n = input()
+        print(" the square of", n, "is:", math.sqrt(int(n)))
+
+    def remainder(self):
+        print("please enter the first number")
+        a = input()
+        print("Please enter the second number")
+        b = input()
+        print("The reminder when diving,", a, "and", b, "is: ", math.remainder(int(a), int(b)))
+
+        print(5%2)
+
+def main():
+    m = mathFunctions()
+    #m.calculatePi()
+    #m.calculatesSqrt()
+    m.remainder()
+
+
+if __name__ == "__main__ ":
+    main()
