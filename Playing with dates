@@ -1,0 +1,52 @@
+from datetime import date
+from datetime import datetime
+from datetime import timedelta
+
+class workingwithDates:
+
+    global n
+    n = datetime.now()
+
+    def timeDelta(self):
+        print(timedelta(days=365, hours=5, minutes=1))
+
+    def todayDate(self):
+        print("Today is: " + str(n))
+
+    def oneYear(self):
+        print("It will be " + str(n + timedelta(days=365)), "in years' time")
+
+    def twoWeekFiveDays(self):
+        print("It will be" + str(n +timedelta(weeks=2, days=5)), "in 2 weeks and five days")
+
+    def oneWeekago(self):
+        t = n - timedelta(weeks=1)
+        s = t.strftime("%A, %B, %d, %Y")
+        print("One week ago it was" + s)
+
+    def christmasDay(self):
+        today = date.today()
+        xmas = date(today.year, 4, 1)
+
+        if xmas < today:
+            lastXmas = today - xmas
+            print(" Christmas passed by ", lastXmas.days, " days ago")
+            xmas = xmas.replace(year=today.year + 1)
+
+        timetoxmas = xmas - today
+        print("It's only ", timetoxmas.days, " days to Christmas")
+
+def main():
+    w = workingwithDates()
+    #w.timeDelta()
+    #w.todayDate()
+    #w.oneYear()
+    #w.twoWeekFiveDays()
+    #w.oneWeekago()
+    w.christmasDay()
+
+
+
+
+if __name__ == "__main__":
+    main()
