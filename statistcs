@@ -1,0 +1,31 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+
+inp_dir="C:\\Users\\rarbr\\PycharmProjects\\pythonProject\\Data_Analysis_1 (1).csv"
+df=pd.read_csv(inp_dir)
+
+print("Descriptive Statistics")
+print(df.describe())
+
+print("Descriptive Statistics")
+print(df.describe())
+
+print("First Three rows")
+print(df.head(3))
+print("Number of datasets",len(df))
+
+print("Number of Unique values for file index",df['file_index'].nunique())
+print("Number of Unique values for Intersection_collision",df['Intersection_collision'].nunique())
+print("Number of rows",df.shape[0])
+print("Number of columns",df.shape[1])
+print("Identifying missing values")
+print(df.isnull())
+print("Number of missing values in each column")
+print(df.isnull().sum())
+df.dropna(inplace=True)
+df.to_csv('C:\\Users\\rarbr\\PycharmProjects\\pythonProject\\clean.csv')
+print("Number of missing values in each column")
+print(df.isnull().sum())
