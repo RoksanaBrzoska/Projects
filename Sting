@@ -1,0 +1,34 @@
+
+
+f = 123
+print("string type" + str(123))
+def aFunction():
+    global n
+    n = None
+    print(n)
+
+aFunction()
+print(n)
+
+def function(arg1, arg2):
+    print(5 % 2)
+
+
+n = 7
+c = 0
+while(n):
+    if(n>5):
+        c=c+n-1
+        n=n-1
+    else:
+        break
+print(n)
+print(c)
+
+import datetime
+
+tday=datetime.date.today()
+print(tday.weekday())
+
+s = strtime("%a, %d %b %Y %H:%M:%S")
+print(s)
