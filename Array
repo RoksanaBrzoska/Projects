@@ -1,0 +1,33 @@
+import numpy as np
+
+v1=np.zeros(5)
+v2=np.ones(5)
+v3=np.append(v1,v2)
+print(v3)
+
+a = np.array([2, 3, 4])
+print(a)
+
+b = np.array([
+    [2, 3, 8],
+[4, 5, 6]
+ ])
+print(b)
+print(" Element as index 0 and 1 is", b[0][1])
+print(" Row 1 is ", b[1])
+print(" Column 2 is ", b[:,2])
+print(" Strandard deviation for {} is {}".format(b,np.std(b)))
+print("Dimension of array is", np.ndim(b))
+print("shape is ", np.shape(b))
+
+def remove_odd(li):
+    for i in li:
+        if (1%2 !=0):
+            li.remove(i)
+    return li
+A=[1,2,3,40,50,60]
+remove_odd(A)
+print(A)
+
+
+
