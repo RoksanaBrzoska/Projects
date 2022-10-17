@@ -1,0 +1,25 @@
+from datetime import datetime
+
+class Formatting:
+    global time
+    time = datetime.now()
+
+    def yearFormat(self):
+        print(time.strftime("the current year it %a, %d %b %Y %I:%M:%S"))
+
+    def dateFormat(self):
+        print(time.strftime("The date is: %a %d %B %Y"))
+
+    def timeFormat(self):
+        print(time.strftime("The current time is: %I:%M:%S %p"))
+        print(time.strftime("The current time is: %H:%M:%S"))
+
+
+def main():
+    f = Formatting()
+    # f.yearFormat()
+    # f.dateFormat()
+    f.timeFormat()
+
+if __name__ == "__main__ ":
+     main()
