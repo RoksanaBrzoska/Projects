@@ -1,0 +1,59 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from h5py._hl import dataset
+
+inp_dir = "C:\\Users\\rarbr\\PycharmProjects\\pythonProject\\internet_traffic_hist.csv"
+df = pd.read_csv(inp_dir)
+
+df.boxplot()
+plt.show()
+
+from pandas.plotting import scatter_matrix
+
+scatter_matrix(df, alpha=0.2, figsize=(8, 8), diagonal='hist')
+plt.show()
+
+dataset = pd.read_csv('C:\\Users\\rarbr\\PycharmProjects\\pythonProject\\internet_traffic_hist.csv')
+x = dataset.iloc[:, 0:1].values
+y = dataset.iloc[:, 1].values
+
+from sklearn.linear_model import LinearRegression
+
+lin_reg = LinearRegression()
+lin_reg.fit(x, y)
+
+
+def viz_linear():
+    plt.scatter(x, y, color='red')
+    plt.plot(x, lin_reg.predict(x), color='blue')
+    plt.title('Year and Traffic (Linear Regression)')
+    plt.xlabel('Year')
+    plt.ylabel('Traffic')
+    plt.show()
+    return
+
+
+viz_linear()
+
+print("*Correlation**")
+print(df.corr(method='pearson'))
+
+x = ['year']
+y = ['traffic']
+plt.figure(figsize=(20, 10))
+plt.plot(x, y, 'o', markersize=15)
+plt.ylabel('Traffic', fontsize=30)
+plt.xlabel('Year', fontsize=30)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.show()
+
+import numpy as polyfit
+
+m, b =np.polyfit(x,y,1)
+print('The slope of line is {:.2f}.'.format(m))
+print('The y-intercept is {:.2f}.'.format(b))
+print('The best fit simple linear regression line is {:.2f}x+{:.2f}.'.format(m,b))
+
+plt.plot(2022,m*2022+b,'-', label = 'Simple Linear Regression Line', linewidth=4)
