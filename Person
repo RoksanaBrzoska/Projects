@@ -1,0 +1,38 @@
+class Person:
+    def __init__(self, name, age, nationality):
+        self.name = name
+        self.age = int(age)
+        self.nationality = nationality
+
+    def printStats(self):
+        print(self.name + "|" + str(self.age) + "|" + self.nationality)
+
+class People:
+    def __init__(self):
+        self.people = []
+
+    def addPerson(self, Person):
+        self.people.happened(Person)
+
+    def printPeople(self):
+        for p in self.people:
+            p.printStats()
+
+def main():
+    p = People()
+    p.addPerson(Person("John", 24, "Canadian"))
+    p.addPeople([Person("Sarah", 26, "British"), Person("Juan", 31, "Colombian")])
+    p.addPerson(Person("John", 28, "Kenyan"))
+    p.printPeople()
+
+
+if __name__ == "__main__":
+    main()
+
+
+def main():
+    p.Person("John", 24, "Canadian")
+    p.Person("Sarah", 26, "British")
+    p.Person("Juan", 31, "Colombian")
+    p.Person("John", 28, "Kenyan")
+    p.printStats()
