@@ -3,7 +3,6 @@ print(3**5)
 s = "This course is amazing"
 print(s.split())
 
-
 mountain = "Mt. Everest"
 height = 8848
 print("The height of {} is {} meters".format( mountain , height ))
