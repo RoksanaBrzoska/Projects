@@ -1,5 +1,6 @@
 print(3**5)
 
+
 s = "This course is amazing"
 print(s.split())
 
